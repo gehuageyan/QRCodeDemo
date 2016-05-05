@@ -33,7 +33,6 @@
             android:label="@string/title_activity_sms"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".activity.ContactsActivity"/>
         <activity android:name=".activity.ScanActivity">
         </activity>
         <activity android:name=".activity.CreateQRCodeActivity">

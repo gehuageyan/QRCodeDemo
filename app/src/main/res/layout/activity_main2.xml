@@ -9,13 +9,14 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:background="#0000ff">
+        android:background="#5483EB">
         <TextView
             android:id="@+id/main_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:text="我是头部"/>
+            android:text="我是头部"
+            android:textColor="#fff"/>
     </LinearLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/main_vp_content"
@@ -27,7 +28,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:orientation="horizontal"
+        android:background="#5483EB">
         <include
             android:id="@+id/navigation_item_scan"
             layout="@layout/navigation_bottom_item"

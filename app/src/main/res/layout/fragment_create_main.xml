@@ -9,73 +9,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
-            <LinearLayout
+            android:orientation="vertical">
+
+            <include
                 android:id="@+id/fl_ll_ll_sms"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_chat_group"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="短信"/>
-
-            </LinearLayout>
-
-            <LinearLayout
+                layout="@layout/create_item"/>
+            <include
                 android:id="@+id/fl_ll_ll_contacts"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_chat_group"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="通讯录"/>
-
-            </LinearLayout>
-            <LinearLayout
+                layout="@layout/create_item"/>
+            <include
                 android:id="@+id/fl_ll_ll_http"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_chat_group"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="网址"/>
-
-            </LinearLayout>
-            <LinearLayout
+                layout="@layout/create_item"/>
+            <include
                 android:id="@+id/fl_ll_ll_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/icon_chat_group"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="文本"/>
-
-            </LinearLayout>
+                layout="@layout/create_item"/>
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

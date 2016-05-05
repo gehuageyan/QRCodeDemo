@@ -27,8 +27,8 @@ public class CreateQRCodeActivity extends BaseActivity {
     private GenerateStyle type;
 
     private ImageView headImgView;
-    private int[] headImgs={R.mipmap.icon_chat_group,R.mipmap.icon_chat_group,
-            R.mipmap.icon_chat_group,R.mipmap.icon_chat_group};
+    private int[] headImgs={R.mipmap.icon_sms,R.mipmap.icon_contacts,
+            R.mipmap.icon_http,R.mipmap.icon_text};
 
     private TextView headTitleView;
     private String[] headTitles = {"短信","通讯录","网址","文本"};

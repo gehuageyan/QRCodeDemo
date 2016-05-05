@@ -18,7 +18,6 @@ import com.blq.qrcode.fragment.AboutFragment;
 import com.blq.qrcode.fragment.CreateMainFragment;
 import com.blq.qrcode.fragment.HistoryFragment;
 import com.blq.qrcode.fragment.ScanCodeFragment;
-import com.blq.snblib.util.MLog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,10 +30,10 @@ public class Main2Activity extends FragmentActivity implements View.OnClickListe
     private String[] titles = {"扫描二维码","生成二维码","历史记录","关于"};
 
     private LinearLayout[] tabLayouts;
-    private int[] tabDefaultImg = {R.mipmap.btn_press_vedio,R.mipmap.btn_press_vedio,
-            R.mipmap.btn_press_vedio,R.mipmap.btn_press_vedio};
-    private int[] tabSelectImg = {R.mipmap.icon_chat_group,R.mipmap.icon_chat_group,
-            R.mipmap.icon_chat_group,R.mipmap.icon_chat_group};
+    private int[] tabDefaultImg = {R.mipmap.icon_tab_scan_default,R.mipmap.icon_tab_create_default,
+            R.mipmap.icon_tab_history_default,R.mipmap.icon_tab_about_default};
+    private int[] tabSelectImg = {R.mipmap.icon_tab_scan_select,R.mipmap.icon_tab_create_select,
+            R.mipmap.icon_tab_history_select,R.mipmap.icon_tab_about_select};
     private String[] tabTitle={"扫码","生成","历史","关于"};
 
 

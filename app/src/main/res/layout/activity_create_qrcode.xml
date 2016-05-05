@@ -8,6 +8,35 @@
     tools:context="com.blq.qrcode.activity.CreateQRCodeActivity">
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="#5483EB">
+        <ImageView
+            android:id="@+id/ll_ll_img_back"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:src="@mipmap/icon_back"/>
+        <TextView
+            android:id="@+id/create_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:text="我是头部"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
@@ -15,7 +44,7 @@
             android:id="@+id/ll_ll_img_head"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@mipmap/btn_press_vedio"/>
+            android:src="@mipmap/icon_sms"/>
         <TextView
             android:id="@+id/ll_ll_tv_title"
             android:layout_width="wrap_content"
@@ -26,12 +55,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
-        <TextView
-            android:id="@+id/ll_ll_tv_content1_title"
+        <ImageView
+            android:id="@+id/ll_ll_img_content1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="联系人1"/>
+            android:src="@mipmap/icon_sms_content1"/>
         <EditText
             android:id="@+id/ll_ll_et_content1"
             android:layout_width="match_parent"
@@ -42,12 +72,13 @@
         android:id="@+id/ll_ll_content2_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
-        <TextView
-            android:id="@+id/ll_ll_tv_content2_title"
+        <ImageView
+            android:id="@+id/ll_ll_img_content2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="联系人2"/>
+            android:src="@mipmap/icon_sms_content2"/>
         <EditText
             android:id="@+id/ll_ll_et_content2"
             android:layout_width="match_parent"

@@ -5,7 +5,7 @@ import android.view.View;
 import com.blq.qrcode.R;
 
 public class HistoryFragment extends BaseFragment {
-    
+
 
     @Override
     protected int layout() {
