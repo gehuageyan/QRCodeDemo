@@ -18,10 +18,11 @@ import java.io.IOException;
  */
 public class BitmapUtil {
     private static final String TAG = BitmapUtil.class.getSimpleName();
+    private static final String BasePath = "mnt/sdcard/qrcode";
     public static String saveBitmap(Bitmap bm,String fileName) {
-        final String filePath = "mnt/sdcard/qrcode/"+fileName;
+        final String filePath = BasePath+"/"+fileName;
         MLog.e(TAG, "保存图片"+filePath);
-        File f = new File("/sdcard/qrcode");
+        File f = new File(BasePath);
         if (!f.exists())
             f.mkdir();
         f = new File(filePath);
@@ -35,10 +36,9 @@ public class BitmapUtil {
             out.flush();
             out.close();
             Log.i(TAG, "已经保存");
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+            return null;
         }
         return filePath;
     }

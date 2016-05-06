@@ -28,16 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activity.SmsActivity"
-            android:label="@string/title_activity_sms"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-        <activity android:name=".activity.ScanActivity">
-        </activity>
         <activity android:name=".activity.CreateQRCodeActivity">
-        </activity>
-        <activity android:name=".activity.Main2Activity">
         </activity>
     </application>
 
