@@ -47,13 +47,14 @@ public class CreateQRCodeActivity extends BaseActivity {
     private int[] content1Img ={R.mipmap.icon_sms_content1,R.mipmap.icon_contacts_content1,
             R.mipmap.icon_http_smalll,R.mipmap.icon_text_small};
     private EditText content1;
+    private String[] content1Hint = {"手机号码","联系人","网页链接","文本文档"};
 
     private LinearLayout content2Group;
     private ImageView content2ImgView;
-
     private int[] content2Img ={R.mipmap.icon_sms_content2,R.mipmap.icon_contacts_content2,
             R.mipmap.icon_http_smalll,R.mipmap.icon_text_small};
     private EditText content2;
+    private String[] content2Hint = {"短信内容","手机号码","网页链接","文本文档"};
 
     //创建二维码按钮
     private Button createBtn;
@@ -125,6 +126,8 @@ public class CreateQRCodeActivity extends BaseActivity {
         navigationTitleView.setText(navigationTitles[i]);
         headImgView.setImageResource(headImgs[i]);
         headTitleView.setText(headTitles[i]);
+        content1.setHint(content1Hint[i]);
+        content2.setHint(content2Hint[i]);
         content1ImgView.setImageResource(content1Img[i]);
         content2ImgView.setImageResource(content2Img[i]);
         if (i==2||i==3){
@@ -177,6 +180,7 @@ public class CreateQRCodeActivity extends BaseActivity {
         Bitmap qrBitmap =generateQRCode.getQRCodeBitmap();
         qrImgSrc=BitmapUtil.saveBitmap(qrBitmap,qrPrefix+System.currentTimeMillis()+".jpg");
         qrImgView.setImageBitmap(qrBitmap);
+        fenxiangBtn.setVisibility(View.VISIBLE);
     }
 
     @Override

@@ -9,15 +9,18 @@
         android:orientation="vertical"
         android:layout_gravity="center">
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/icon_sms"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:src="@mipmap/icon_about_top"
             android:layout_gravity="center"/>
+
+        <include layout="@layout/partition"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="黑龙江科技大学"
             android:layout_gravity="center"/>
+        <include layout="@layout/partition"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:text="电子与信息工程学院"/>
         </LinearLayout>
-
+        <include layout="@layout/partition"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:text="电子信息科学与技术"/>
         </LinearLayout>
+        <include layout="@layout/partition"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:text="电技12-1"/>
         </LinearLayout>
+        <include layout="@layout/partition"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -69,8 +74,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="陈详海"/>
+                android:text="陈祥海"/>
         </LinearLayout>
+        <include layout="@layout/partition"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:text="2012021263"/>
         </LinearLayout>
+        <include layout="@layout/partition"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -91,7 +98,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="指导老师"/>
+                android:text="指导老师："/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

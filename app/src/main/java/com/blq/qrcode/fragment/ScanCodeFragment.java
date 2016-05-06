@@ -20,6 +20,7 @@ import com.blq.qrcode.QRScaner.CameraManager;
 import com.blq.qrcode.QRScaner.CameraPreview;
 import com.blq.qrcode.R;
 import com.blq.qrcode.activity.AnalyzeActivity;
+import com.blq.qrcode.function.GenerateStyle;
 import com.blq.snblib.util.MLog;
 import com.dtr.zbar.build.ZBarDecoder;
 
@@ -227,36 +228,20 @@ public class ScanCodeFragment extends BaseFragment {
     }
 
     private void judgeQRResult(String result) {
-        Toast.makeText(getActivity(),result,Toast.LENGTH_LONG).show();
         MLog.e("result",result);
-        try{
 
-            String[] q =result.split("/#/");
-            MLog.e("解析","qqq:"+q.toString());
-            for (String ss :q){
-                MLog.e("解析",ss);
-            }
-        }catch (Exception e){
-            MLog.e("出错了");
+        String[] q =result.split("/#/");
+        for (String ss :q){
+            MLog.e("解析",ss);
         }
-
+        if(q.length<2){
+            Toast.makeText(getContext(),"请扫描该应用生成的二维码",Toast.LENGTH_LONG).show();
+            return;
+        }
         Intent intent = new Intent(getActivity(), AnalyzeActivity.class);
-    /*    if (!(result.startsWith("X"))) {
-            return;
-        }
-
-        result = contentDecode(result);
-        if (!(result.matches("^[0-9]+$") && result.length() > 2)) {
-            return;
-        }
-
-        Intent intent = new Intent();
-        intent.setClass(getActivity().this, MsgWebActivity.class);
-        String url= HttpInterface.ElinkMobile.PERSONAL_CARD_INDEX+"?userId=" + result+"&myUserId="+ GlobalVar.UserInfo.RefBusinessId;
-        intent.putExtra("Url", url);
-        intent.putExtra("Title", "个人名片");
+        intent.putExtra("TYPE",q[0]);
+        intent.putExtra("CONTENT",q[1]);
         startActivity(intent);
-        finish();*/
     }
 
 }

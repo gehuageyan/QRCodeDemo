@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
     <color name="tab_text_select">#67fe3F</color>
     <color name="tab_text_default">#ffffff</color>
+    <color name="blue_style">#5483EB</color>
 </resources>

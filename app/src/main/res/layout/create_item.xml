@@ -8,8 +8,8 @@
               android:gravity="center">
     <ImageView
         android:id="@+id/ll_ll_img_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:src="@mipmap/icon_sms"/>
     <TextView
         android:id="@+id/ll_ll_tv_title"

@@ -9,7 +9,7 @@
         android:layout_height="50dp"
         android:orientation="horizontal"
         android:gravity="center"
-        android:background="#5483EB">
+        android:background="@color/blue_style">
         <TextView
             android:id="@+id/main_title"
             android:layout_width="wrap_content"
@@ -31,7 +31,7 @@
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:orientation="horizontal"
-        android:background="#5483EB">
+        android:background="@color/blue_style">
         <include
             android:id="@+id/navigation_item_scan"
             layout="@layout/navigation_bottom_item"
