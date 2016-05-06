@@ -1,5 +1,6 @@
 package com.blq.qrcode.activity;
 
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -35,7 +36,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private int[] tabSelectImg = {R.mipmap.icon_tab_scan_select,R.mipmap.icon_tab_create_select,
             R.mipmap.icon_tab_history_select,R.mipmap.icon_tab_about_select};
     private String[] tabTitle={"扫码","生成","历史","关于"};
-
+    private ColorStateList tabColorDefault;
+    private ColorStateList tabColorSelect ;
 
     private List<Fragment> fragmentList;
     private ScanCodeFragment oneFragment;
@@ -76,6 +78,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         LinearLayout historyLayout= null;
         LinearLayout aboutLayout= null;
         tabLayouts = new LinearLayout[]{scanLayout,createLayout,historyLayout,aboutLayout};
+        tabColorDefault = getResources().getColorStateList(R.color.tab_text_default);
+        tabColorSelect = getResources().getColorStateList(R.color.tab_text_select);
     }
 
     /**
@@ -116,7 +120,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private void updateTab(int index,boolean isSelect){
         titleView.setText(titles[index]);
         ((ImageView)tabLayouts[index].findViewById(R.id.ll_img_head)).setImageResource(isSelect?tabSelectImg[index]:tabDefaultImg[index]);
-        ((TextView)tabLayouts[index].findViewById(R.id.ll_tv_title)).setTextColor(isSelect?Color.GREEN:Color.WHITE);
+        ((TextView)tabLayouts[index].findViewById(R.id.ll_tv_title)).setTextColor(isSelect?tabColorSelect:tabColorDefault);
     }
 
     /**

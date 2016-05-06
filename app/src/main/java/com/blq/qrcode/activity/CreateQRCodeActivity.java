@@ -2,6 +2,7 @@ package com.blq.qrcode.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Point;
 import android.net.Uri;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,8 @@ import java.io.File;
  * 创建二维码
  */
 public class CreateQRCodeActivity extends BaseActivity {
+
+    private static final String qrPrefix="qrcode";
 
     //外部传入的生成类型
     private GenerateStyle type;
@@ -59,6 +62,7 @@ public class CreateQRCodeActivity extends BaseActivity {
     private ImageView qrImgView;
     //二维码保存的路径(由方法返回)
     private String qrImgSrc;
+    private int qrWight;
 
     //分享按钮
     private Button fenxiangBtn;
@@ -67,11 +71,20 @@ public class CreateQRCodeActivity extends BaseActivity {
     protected int contentView() {
         return R.layout.activity_create_qrcode;
     }
-
+//67fe3F
     @Override
     protected void initDate() {
         Intent intent = getIntent();
         type = (GenerateStyle) intent.getSerializableExtra("TYPE");
+        Point size = new Point();
+        getWindowManager().getDefaultDisplay().getSize(size);
+
+        if (size.x>size.y){
+            qrWight=(int)(size.y*0.7);
+        }else{
+            qrWight=(int)(size.x*0.7);
+        }
+
     }
 
     @Override
@@ -159,9 +172,10 @@ public class CreateQRCodeActivity extends BaseActivity {
         String con2 = content2.getText().toString();
 
         GenerateQRCode generateQRCode = new GenerateQRCode(con1+GenerateQRCode.contentCut+con2, type);
-        generateQRCode.setSize(400,400);
+
+        generateQRCode.setSize(qrWight,qrWight);
         Bitmap qrBitmap =generateQRCode.getQRCodeBitmap();
-        qrImgSrc=BitmapUtil.saveBitmap(qrBitmap,"ewima"+System.currentTimeMillis()+".jpg");
+        qrImgSrc=BitmapUtil.saveBitmap(qrBitmap,qrPrefix+System.currentTimeMillis()+".jpg");
         qrImgView.setImageBitmap(qrBitmap);
     }
 
