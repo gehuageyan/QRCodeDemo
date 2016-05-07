@@ -34,101 +34,104 @@
             android:paddingLeft="10dp"
             android:paddingRight="10dp"/>
     </LinearLayout>
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-    android:orientation="vertical">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/ll_ll_img_head"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@mipmap/icon_sms"/>
-        <TextView
-            android:id="@+id/ll_ll_tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="短信"
-            android:textSize="20sp"/>
-    </LinearLayout>
-    <include layout="@layout/partition"/>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/ll_ll_img_content1"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@mipmap/icon_sms_content1"/>
-        <EditText
-            android:layout_marginLeft="8dp"
-            android:id="@+id/ll_ll_et_content1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="xxx"/>
-    </LinearLayout>
-    <include layout="@layout/partition"/>
-    <LinearLayout
-        android:id="@+id/ll_ll_content2_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-        <ImageView
-            android:id="@+id/ll_ll_img_content2"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@mipmap/icon_sms_content2"/>
-        <EditText
-            android:layout_marginLeft="8dp"
-            android:id="@+id/ll_ll_et_content2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="xxx"/>
-    </LinearLayout>
-
-        <include layout="@layout/partition"/>
-        <include layout="@layout/partition"/>
-    <Button
-        android:id="@+id/qr_create"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/blue_style"
-        android:textColor="#fff"
-        android:textSize="18sp"
-        android:text="生成"/>
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:orientation="vertical">
-            <ImageView
-                android:id="@+id/ll_ll_img_qr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/ll_ll_img_head"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@mipmap/icon_sms"/>
+                <TextView
+                    android:id="@+id/ll_ll_tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="短信"
+                    android:textSize="20sp"/>
+            </LinearLayout>
+            <include layout="@layout/partition"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/ll_ll_img_content1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/icon_sms_content1"/>
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/ll_ll_et_content1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="xxx"/>
+            </LinearLayout>
+            <include layout="@layout/partition"/>
+            <LinearLayout
+                android:id="@+id/ll_ll_content2_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/ll_ll_img_content2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@mipmap/icon_sms_content2"/>
+                <EditText
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/ll_ll_et_content2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="xxx"/>
+            </LinearLayout>
+
+            <include layout="@layout/partition"/>
             <include layout="@layout/partition"/>
             <Button
-                android:visibility="gone"
-                android:id="@+id/ll_ll_fenxiang"
-                android:layout_width="wrap_content"
+                android:id="@+id/qr_create"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/blue_style"
                 android:textColor="#fff"
                 android:textSize="18sp"
-                android:text="分享"/>
+                android:text="生成"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/ll_ll_img_qr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <include layout="@layout/partition"/>
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/ll_ll_fenxiang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/blue_style"
+                    android:textColor="#fff"
+                    android:textSize="18sp"
+                    android:text="分享"/>
+                <include layout="@layout/partition"/>
+                <include layout="@layout/partition"/>
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
-    </LinearLayout>
 </LinearLayout>

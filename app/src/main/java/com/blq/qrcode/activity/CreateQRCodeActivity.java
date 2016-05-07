@@ -13,12 +13,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blq.qrcode.R;
+import com.blq.qrcode.db.HistoryDb;
 import com.blq.qrcode.function.GenerateQRCode;
 import com.blq.qrcode.function.GenerateStyle;
 import com.blq.qrcode.util.BitmapUtil;
 import com.blq.snblib.util.MLog;
 
 import java.io.File;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 /**
  * 创建二维码
@@ -63,6 +66,7 @@ public class CreateQRCodeActivity extends BaseActivity {
     private ImageView qrImgView;
     //二维码保存的路径(由方法返回)
     private String qrImgSrc;
+    //二维码 的宽度
     private int qrWight;
 
     //分享按钮
@@ -80,6 +84,9 @@ public class CreateQRCodeActivity extends BaseActivity {
         Point size = new Point();
         getWindowManager().getDefaultDisplay().getSize(size);
 
+        /**
+         * 这里设置宽或高短的一边的长度的0.7倍作为生成后的二维码的边长
+         */
         if (size.x>size.y){
             qrWight=(int)(size.y*0.7);
         }else{
@@ -181,6 +188,13 @@ public class CreateQRCodeActivity extends BaseActivity {
         qrImgSrc=BitmapUtil.saveBitmap(qrBitmap,qrPrefix+System.currentTimeMillis()+".jpg");
         qrImgView.setImageBitmap(qrBitmap);
         fenxiangBtn.setVisibility(View.VISIBLE);
+
+        HistoryDb db = new HistoryDb(this);
+        long time = System.currentTimeMillis();
+        Date date = new Date(time);
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+        String tim = sf.format(date);
+        db.addHistory(HistoryDb.STATUS_CREATE,type.getTitle(),con1,con2,tim);
     }
 
     @Override

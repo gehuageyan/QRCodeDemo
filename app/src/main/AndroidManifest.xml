@@ -32,6 +32,8 @@
         </activity>
         <activity android:name=".activity.AnalyzeActivity">
         </activity>
+        <activity android:name=".activity.HistoryActivity">
+        </activity>
     </application>
 
 </manifest>

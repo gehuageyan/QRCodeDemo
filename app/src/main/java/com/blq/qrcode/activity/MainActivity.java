@@ -160,6 +160,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
      * @param newCurrentTab 最新移动到的导航栏
      */
     private void updateTabView(int newCurrentTab) {
+        if(newCurrentTab==0){
+            oneFragment.restart();
+        }else{
+            oneFragment.unstart();
+        }
         updateTab(currentTab,false);
         updateTab(newCurrentTab,true);
         currentTab=newCurrentTab;
@@ -184,6 +189,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+    }
+    public int getCurrentTab(){
+        return currentTab;
+    }
     class MainFragmentPagerAdapter extends FragmentPagerAdapter{
 
         public MainFragmentPagerAdapter(FragmentManager fm) {

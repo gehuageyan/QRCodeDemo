@@ -20,6 +20,7 @@ import com.blq.qrcode.QRScaner.CameraManager;
 import com.blq.qrcode.QRScaner.CameraPreview;
 import com.blq.qrcode.R;
 import com.blq.qrcode.activity.AnalyzeActivity;
+import com.blq.qrcode.activity.MainActivity;
 import com.blq.qrcode.function.GenerateStyle;
 import com.blq.snblib.util.MLog;
 import com.dtr.zbar.build.ZBarDecoder;
@@ -49,6 +50,9 @@ public class ScanCodeFragment extends BaseFragment {
     public void onResume() {
         super.onResume();
         MLog.e("onResume");
+        if(((MainActivity)getActivity()).getCurrentTab()!=0){
+            unstart();
+        }
     }
 
     @Override
@@ -114,15 +118,28 @@ public class ScanCodeFragment extends BaseFragment {
     protected void bindEvent() {
         scanRestart.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                if (barcodeScanned) {
-                    barcodeScanned = false;
-                    mCamera.setPreviewCallback(previewCb);
-                    mCamera.startPreview();
-                    previewing = true;
-                    mCamera.autoFocus(autoFocusCB);
-                }
+                restart();
             }
         });
+    }
+
+    public  void restart() {
+        if (barcodeScanned) {
+            barcodeScanned = false;
+            mCamera.setPreviewCallback(previewCb);
+            mCamera.startPreview();
+            previewing = true;
+            mCamera.autoFocus(autoFocusCB);
+        }
+    }
+    public void unstart(){
+        if(!barcodeScanned){
+            previewing = false;
+            mCamera.setPreviewCallback(null);
+            mCamera.stopPreview();
+            barcodeScanned = true;
+            mCamera.autoFocus(null);
+        }
     }
 
     private void releaseCamera() {
