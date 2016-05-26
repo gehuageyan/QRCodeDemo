@@ -22,20 +22,16 @@ public class GenerateQRCode {
     private static final String TAG = GenerateQRCode.class.getSimpleName();
     public static final String titleCut="/#/";//字符串头部标识和内容的分割标志
     public static final String contentCut="||";//字符串内容之间的分割标志
-    private String content;//传入的字符串
+    private String content1;
+    private String content2;
     private GenerateStyle style;//生成二维码的类型
-    private String realContent;//拼接后的字符串
     private int showWidth=200;//二维码显示的宽度
     private int showHeight=200;//二维码显示的高度
 
-    public GenerateQRCode(String content,GenerateStyle style){
-        this.content = content;
+    public GenerateQRCode(String content1,String content2,GenerateStyle style){
+        this.content1 = content1;
+        this.content2 = content2;
         this.style = style;
-        initDate();
-    }
-
-    private void initDate() {
-        realContent=style.getTitle()+titleCut+content;
     }
 
     /**
@@ -55,7 +51,21 @@ public class GenerateQRCode {
     public Bitmap getQRCodeBitmap(){
         Bitmap bitmap =null;
         //如果传入的content数据是空的话那个就返回
-        if(content==null||content.isEmpty()){
+        if(content1==null||content1.isEmpty()){
+            return null;
+        }
+        String realContent="";
+        switch (style){
+            case CONTACTS:
+            case SMS:
+                realContent=style.getTitle()+titleCut+content1+contentCut+content2;
+                break;
+            case TEXT:
+            case URL:
+                realContent=style.getTitle()+titleCut+content1;
+                break;
+        }
+        if(realContent.isEmpty()){
             return null;
         }
 
@@ -63,7 +73,12 @@ public class GenerateQRCode {
             Map hints = new HashMap<>();
             hints.put(EncodeHintType.CHARACTER_SET, "utf-8");
 
-            BitMatrix bitMatrix = new MultiFormatWriter().encode(realContent, BarcodeFormat.QR_CODE, showWidth, showHeight,hints);
+            BitMatrix bitMatrix = new MultiFormatWriter()
+                    .encode(realContent,
+                            BarcodeFormat.QR_CODE,
+                            showWidth,
+                            showHeight,
+                            hints);
             int width = bitMatrix.getWidth();
             int height = bitMatrix.getHeight();
             int[] pixels = new int[width * height];

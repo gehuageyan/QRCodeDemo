@@ -181,8 +181,7 @@ public class CreateQRCodeActivity extends BaseActivity {
         String con1 = content1.getText().toString();
         String con2 = content2.getText().toString();
 
-        GenerateQRCode generateQRCode = new GenerateQRCode(con1+GenerateQRCode.contentCut+con2, type);
-
+        GenerateQRCode generateQRCode = new GenerateQRCode(con1,con2,type);
         generateQRCode.setSize(qrWight,qrWight);
         Bitmap qrBitmap =generateQRCode.getQRCodeBitmap();
         qrImgSrc=BitmapUtil.saveBitmap(qrBitmap,qrPrefix+System.currentTimeMillis()+".jpg");
